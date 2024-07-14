@@ -1,0 +1,6 @@
+.about {
+    background: url("/public/images/about.jpg") center center/cover no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }

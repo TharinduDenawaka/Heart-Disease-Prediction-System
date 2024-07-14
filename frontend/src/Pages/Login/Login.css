@@ -1,0 +1,75 @@
+.login {
+  background: url("/public/images/heart_login.jpg") center center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    /* background: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Heading of the form */
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+/* Form element styling */
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.login-container label {
+    margin-bottom: 5px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Input field styling */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Button styling */
+.login-container button[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.login-container button[type="submit"]:hover {
+    background-color: #ffb74d;
+}
+
+/* Link styling */
+.login-container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff6f61;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+.login-container a:hover {
+    color: #ffb74d;
+}

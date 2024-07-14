@@ -1,0 +1,78 @@
+
+.signup {
+  background: url("/public/images/heart_signup.jpg") center center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.signup-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    /* background: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Heading of the form */
+  .signup-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  
+  /* Form element styling */
+  .signup-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Label styling */
+  .signup-container label {
+    margin-bottom: 5px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  /* Input field styling */
+  .signup-container input[type="email"],
+  .signup-container input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Button styling */
+  .signup-container button[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .signup-container button[type="submit"]:hover {
+    background-color: #ffb74d;
+  }
+  
+  /* Link styling */
+  .signup-container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0e0640;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .signup-container a:hover {
+    color: #ffb74d;
+  }
+  

@@ -1,0 +1,91 @@
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.p_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.container {
+  background: transparent; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  z-index: 1;
+}
+
+h4 {
+  background: linear-gradient(90deg, #ff6f61, #ffb74d);
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffb74d; /* Brighter color for labels */
+  background: rgba(255, 255, 255, 0.1); /* Subtle background for labels */
+  padding: 5px;
+  border-radius: 4px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff; /* Light background for inputs */
+  color: #333; /* Dark text color for inputs */
+}
+
+button {
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  grid-column: span 2; /* Make button span across two columns */
+  justify-self: center;
+}
+
+button:hover {
+  background: #ffb74d;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  form {
+    grid-template-columns: 1fr;
+  }
+}
