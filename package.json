@@ -1,5 +1,5 @@
 {
-  "name": "final-research---heart-disease-prediction-system",
+  "name": "heart-disease-prediction-system",
   "version": "1.0.0",
   "description": "ICBT final project",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tharindudasundenawaka/Heart-Disease-Prediction-System.git"
+    "url": "https://github.com/TharinduDenawaka/Heart-Disease-Prediction-System.git"
   },
   "author": "Tharindu Dasun Denawaka",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tharindudasundenawaka/Heart-Disease-Prediction-System/issues"
+    "url": "https://github.com/TharinduDenawaka/Heart-Disease-Prediction-System.git/issues"
   },
-  "homepage": "https://github.com/Tharindudasundenawaka/Heart-Disease-Prediction-System#readme",
+  "homepage": "https://github.com/TharinduDenawaka/Heart-Disease-Prediction-System#readme",
   "dependencies": {
     "concurrently": "^8.2.2"
   },
