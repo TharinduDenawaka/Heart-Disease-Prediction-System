@@ -2,9 +2,9 @@
   "name": "heart-disease-prediction-system",
   "version": "1.0.0",
   "description": "ICBT final project",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "concurrently \"cd backend && nodemon index.js\" \"cd frontend && npm start\""
+    "start": "concurrently \"cd backend && nodemon server.js\" \"cd frontend && npm start\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/TharinduDenawaka/Heart-Disease-Prediction-System#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "concurrently": "^8.2.2"
   },
   "devDependencies": {
