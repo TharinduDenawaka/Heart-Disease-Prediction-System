@@ -15,7 +15,7 @@ const HomePage = () => {
     <div className="home-container">
       <video src="/videos/heart_2.mp4" autoPlay loop muted  />
 
-      {/* <div className="overlay"></div> */}
+      
 
       <div className="content">
          <h1 className="HomeContent">Welcome to Heart Disease Prediction</h1>

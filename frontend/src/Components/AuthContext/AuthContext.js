@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await axios.post('http://localhost:5000/api/users/signup', { email, password });
       console.log('Response:', response.data);
-      // setUser(response.data)
+      setUser(response.data)
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
     }

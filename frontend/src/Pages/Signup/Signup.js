@@ -1,7 +1,6 @@
-// src/components/Signup.js
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../../Pages/AuthContext/AuthContext";
+import { useAuth } from "../../Components/AuthContext/AuthContext";
 import "./Signup.css";
 
 const Signup = () => {
@@ -12,28 +11,31 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signup({ email, password });
-    navigate("/patientForm");
+    console.log('Request body:', { email, password });
+    await signup(email, password);
+    navigate("/patient-form");
   };
 
   return (
     <div className="signup">
       <div className="signup-container">
-        <h2>Sign Up</h2>
+        <h2>Sign up</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Email</label>
             <input
               type="email"
+              name="email"
+              placeholder="Email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
           <div>
-            <label>Password</label>
             <input
               type="password"
+              name="password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

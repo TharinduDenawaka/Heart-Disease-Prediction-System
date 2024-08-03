@@ -1,7 +1,6 @@
-// src/components/Login.js
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../../Pages/AuthContext/AuthContext";
+import { useAuth } from "../../Components/AuthContext/AuthContext";
 import "./Login.css";
 
 const Login = () => {
@@ -12,36 +11,43 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login({ email, password });
-    navigate("/patientForm");
+    console.log("Request body:", { email, password });
+    await login(email, password);
+    navigate("/patient-form");
   };
 
   return (
     <div className="login">
       <div className="login-container">
-        <h2>Log In</h2>
+        <h2>Log in</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Email</label>
             <input
               type="email"
+              name="email"
               value={email}
+              placeholder="Email address"
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
           <div>
-            <label>Password</label>
             <input
               type="password"
+              name="password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <button type="submit">Log In</button>
+          <button type="submit">Log in</button>
         </form>
-        <Link to="/signup">Don't have an account? Sign Up</Link>
+        <Link to="/forgot-password">Forgotten password?</Link>
+        <hr/>
+        <div className="signupLink">
+          <Link to="/signup">Create new account</Link>
+        </div>
       </div>
     </div>
   );

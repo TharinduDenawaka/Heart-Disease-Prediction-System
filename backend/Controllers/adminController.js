@@ -12,7 +12,7 @@ const createInitialAdmin = async () => {
       const existingAdmin = await Admin.findOne({ email: 'admin@gmail.com' });
   
       if (!existingAdmin) {
-        const password = 'admin'; // Default password, should be changed after first login
+        const password = 'admin'; 
         const hashedPassword = await bcrypt.hash(password, 10);
   
         const admin = new Admin({

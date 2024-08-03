@@ -1,35 +1,43 @@
 import React, { useState } from 'react';
 import { useAuth } from '../AuthContext/AuthContext';
+import { useNavigate} from "react-router-dom";
 import './ChangePassword.css';
 
 const ChangePassword = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
-  const { changePassword } = useAuth();
+  const { changePassword, logout } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await changePassword(currentPassword, newPassword);
+    logout()
+    navigate('/login')
     alert('Password changed successfully');
+
   };
 
   return (
+    <div className='changepassword'>
     <div className="change-password-container">
       <h2>Change Password</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Current Password</label>
           <input
             type="password"
+            name='currentPassword'
+            placeholder='Current Password'
             value={currentPassword}
             onChange={(e) => setCurrentPassword(e.target.value)}
             required
           />
         </div>
         <div>
-          <label>New Password</label>
           <input
             type="password"
+            name='newPassword'
+            placeholder="New Password"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
             required
@@ -37,6 +45,7 @@ const ChangePassword = () => {
         </div>
         <button type="submit">Change Password</button>
       </form>
+    </div>
     </div>
   );
 };

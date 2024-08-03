@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 import NavBar from "./Components/NavBar/NavBar";
 import PaitientForm from "./Pages/PatientForm/PatientForm";
@@ -6,7 +6,9 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
-import { AuthProvider } from './Pages/AuthContext/AuthContext'
+import ChangePassword from './Components/ChangePassword/ChangePassword';
+import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
+import { AuthProvider } from './Components/AuthContext/AuthContext'
 
 const App = () => {
   
@@ -18,8 +20,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/patientForm" element={<PaitientForm />} />
+          <Route path="/patient-form" element={<PaitientForm />} />
           <Route path="/about" element={<About />} />
+          <Route path="/change-password" element={<ChangePassword />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </Router>
     </AuthProvider>
