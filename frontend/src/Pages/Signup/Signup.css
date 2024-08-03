@@ -20,6 +20,7 @@
     text-align: center;
     margin-bottom: 20px;
     color: #000000;
+    font-size: 30px;
   }
   
   /* Form element styling */
@@ -66,7 +67,7 @@
   .signup-container a {
     text-decoration: none;
     font-weight: bold;
-    color: #0e0640;
+    color: #060606;
     text-align: center;
     display: block;
     margin-top: 10px;
@@ -76,3 +77,77 @@
     color: #ffb74d;
   }
   
+
+  /* Media queries for tablet and mobile responsiveness */
+@media screen and (max-width: 1024px) {
+  .signup-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .signup-container h2 {
+    font-size: 24px; 
+  }
+
+  .signup-container label {
+    font-size: 16px; 
+  }
+
+  .signup-container input[type="email"],
+  .signup-container input[type="password"] {
+    font-size: 14px; 
+  }
+
+  .signup-container button[type="submit"] {
+    font-size: 14px; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .signup-container {
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  .signup-container h2 {
+    font-size: 20px; 
+  }
+
+  .signup-container label {
+    font-size: 14px; 
+  }
+
+  .signup-container input[type="email"],
+  .signup-container input[type="password"] {
+    font-size: 12px; 
+  }
+
+  .signup-container button[type="submit"] {
+    font-size: 12px; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .signup-container {
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .signup-container h2 {
+    font-size: 18px; 
+  }
+
+  .signup-container label {
+    font-size: 12px; 
+  }
+
+  .signup-container input[type="email"],
+  .signup-container input[type="password"] {
+    font-size: 12px; 
+  }
+
+  .signup-container button[type="submit"] {
+    font-size: 12px; 
+    padding: 10px; 
+  }
+}

@@ -22,23 +22,23 @@ video {
     z-index: 2;
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.6); 
     border-radius: 15px;
-    border: 2px solid #ff6f61; /* Colorful border */
+    border: 2px solid #ff6f61; 
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+    animation: fadeIn 2s ease-in-out; 
 }
 
 .HomeContent {
     color: white;
-    font-size: 2em; /* Adjust font size */
+    font-size: 2em; 
     margin: 10px 0;
 }
 
 .home-container h1 {
-    font-size: 3em; /* Adjust font size */
+    font-size: 3em; 
     margin: 10px 0;
-    background: linear-gradient(90deg, #ff6f61, #ffb74d); /* Gradient text */
+    background: linear-gradient(90deg, #ff6f61, #ffb74d); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -47,7 +47,7 @@ video {
     margin: 8px 0;
     font-size: 1.5em;
     font-family: "Trebuchet MS", Arial, sans-serif;
-    color: #ffb74d; /* Text color */
+    color: #ffb74d; 
 }
 
 .home-btns {
@@ -57,7 +57,7 @@ video {
 .start-button {
     padding: 10px 20px;
     font-size: 1.2em;
-    background: linear-gradient(90deg, #ff6f61, #ffb74d); /* Gradient button */
+    background: linear-gradient(90deg, #ff6f61, #ffb74d); 
     color: white;
     border: none;
     border-radius: 5px;
@@ -66,7 +66,7 @@ video {
 }
 
 .start-button:hover {
-    background: linear-gradient(90deg, #ffb74d, #ff6f61); /* Change gradient on hover */
+    background: linear-gradient(90deg, #ffb74d, #ff6f61); 
 }
 
 @keyframes fadeIn {
@@ -78,9 +78,19 @@ video {
     }
 }
 
+/* Tablet and mobile responsiveness */
 @media screen and (max-width: 960px) {
     .home-container h1 {
         font-size: 2.5em;
+    }
+
+    .home-container p {
+        font-size: 1.4em;
+    }
+
+    .start-button {
+        font-size: 1.1em;
+        padding: 8px 16px;
     }
 }
 
@@ -95,5 +105,26 @@ video {
 
     .start-button {
         width: 100%;
+        font-size: 1em;
+        padding: 12px; /* Increase padding for better touch targets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-container {
+        padding: 10px; /* Add some padding for small screens */
+    }
+
+    .home-container h1 {
+        font-size: 1.8em;
+    }
+
+    .home-container p {
+        font-size: 1em;
+    }
+
+    .start-button {
+        font-size: 0.9em;
+        padding: 10px; /* Adjust padding for smaller buttons */
     }
 }

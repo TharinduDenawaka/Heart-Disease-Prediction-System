@@ -49,8 +49,8 @@ form div {
 label {
   font-weight: bold;
   margin-bottom: 5px;
-  color: #ffb74d; /* Brighter color for labels */
-  background: rgba(255, 255, 255, 0.1); /* Subtle background for labels */
+  color: #ffb74d; 
+  background: rgba(255, 255, 255, 0.1); 
   padding: 5px;
   border-radius: 4px;
 }
@@ -59,8 +59,8 @@ input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background: #fff; /* Light background for inputs */
-  color: #333; /* Dark text color for inputs */
+  background: #fff; 
+  color: #333; 
 }
 
 button {
@@ -71,7 +71,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
-  grid-column: span 2; /* Make button span across two columns */
+  grid-column: span 2; 
   justify-self: center;
 }
 
@@ -87,5 +87,72 @@ button:hover {
   
   form {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Media queries for tablet and mobile responsiveness */
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em; /* Adjust font size for better readability on tablets */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  h4 {
+    font-size: 1.5em; /* Slightly smaller font size for smaller screens */
+  }
+
+  label {
+    font-size: 14px; /* Adjust font size for better readability on smaller screens */
+  }
+
+  input {
+    font-size: 14px; /* Adjust font size for inputs */
+  }
+
+  button {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  h4 {
+    font-size: 1.2em; /* Further reduce font size for very small screens */
+  }
+
+  label {
+    font-size: 12px; /* Further reduce font size for better fit */
+  }
+
+  input {
+    font-size: 12px; /* Further reduce font size for better fit */
+  }
+
+  button {
+    padding: 10px;
+    font-size: 0.9em; /* Adjust button size for small screens */
+    width: 100%; /* Ensure button is full-width on very small screens */
   }
 }

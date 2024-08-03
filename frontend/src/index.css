@@ -31,3 +31,18 @@ body::-ms-scrollbar {
   width: 0;
   height: 0;
 }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; 
+  }
+
+  code {
+    font-size: 14px; 
+  }
+
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}

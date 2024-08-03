@@ -141,3 +141,61 @@
 }
 
 
+/* Mobile and tablet responsiveness */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(8px + 4vmin);
+  }
+
+  .form-container {
+    width: 90%;
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .form-floating input {
+    font-size: 14px;
+  }
+
+  .form-floating label {
+    font-size: 14px;
+  }
+
+  .alert-warning {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    font-size: calc(6px + 4vmin);
+  }
+
+  .form-container {
+    width: 95%;
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  .btn-primary {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .form-floating input {
+    font-size: 12px;
+  }
+
+  .form-floating label {
+    font-size: 12px;
+  }
+
+  .alert-warning {
+    font-size: 12px;
+  }
+}

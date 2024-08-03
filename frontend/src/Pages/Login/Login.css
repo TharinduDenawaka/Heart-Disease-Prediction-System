@@ -18,6 +18,7 @@
     text-align: center;
     margin-bottom: 20px;
     color: #000000;
+    font-size: 30px;
 }
 
 /* Form element styling */
@@ -64,7 +65,7 @@
 .login-container a {
     text-decoration: none;
     font-weight: bold;
-    color: #ff6f61;
+    color: #d9d5d5;
     text-align: center;
     display: block;
     margin-top: 10px;
@@ -72,4 +73,117 @@
 
 .login-container a:hover {
     color: #ffb74d;
+}
+
+.signupLink a {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #4fdd13; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+  
+  .signupLink a:hover {
+    background-color: #378714; 
+  }
+  
+  /* Media queries for tablet and mobile responsiveness */
+@media screen and (max-width: 960px) {
+    .login-container {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .login-container h2 {
+        font-size: 26px;
+    }
+
+    .login-container label {
+        font-size: 16px;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+        font-size: 14px;
+    }
+
+    .login-container button[type="submit"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .signupLink a {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .login-container {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .login-container h2 {
+        font-size: 22px;
+    }
+
+    .login-container label {
+        font-size: 14px;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+        font-size: 14px;
+    }
+
+    .login-container button[type="submit"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .signupLink a {
+        font-size: 14px;
+        padding: 8px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-container {
+        margin: 10px auto;
+        padding: 8px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .login-container label {
+        font-size: 12px;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+        font-size: 12px;
+    }
+
+    .login-container button[type="submit"] {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .signupLink a {
+        font-size: 12px;
+        padding: 6px;
+    }
 }
