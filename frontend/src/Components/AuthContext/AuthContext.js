@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { useEffect, createContext, useState, useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -7,7 +7,23 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
+
+  const [user, setUser] = useState(() => {
+    // Retrieve the user from localStorage if it exists
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+
+  useEffect(() => {
+    // Save user to localStorage whenever it changes
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user));
+    } else {
+      localStorage.removeItem('user');
+    }
+  }, [user]);
+
 
   const login = async (email, password) => {
     try {
@@ -47,9 +63,9 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const signup = async (email, password) => {
+  const signup = async (email, password, username) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/users/signup', { email, password });
+      const res = await axios.post('http://localhost:5000/api/users/signup', { email, password, username });
       setUser(res.data);
       toast.success('Signup successful');
       return res.data
