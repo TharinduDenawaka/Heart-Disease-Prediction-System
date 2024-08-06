@@ -11,9 +11,14 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Request body:", { email, password });
-    await login(email, password);
-    navigate("/patient-form");
+    try {
+      const result = await login(email, password);
+      if(result){
+        navigate("/patient-form");
+      }
+    } catch (error) {
+      console.log("error");
+    }
   };
 
   return (

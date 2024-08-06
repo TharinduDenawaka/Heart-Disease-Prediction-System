@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
 import { useAuth } from '../AuthContext/AuthContext';
+import { useNavigate } from "react-router-dom";
 import './ForgotPassword.css';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const { forgotPassword } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
-    await forgotPassword(email, newPassword);
-    alert('Password reset successfully');
+    try {
+      const result = await forgotPassword(email, newPassword);
+      if(result){
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log("error");
+    }
   };
 
   return (

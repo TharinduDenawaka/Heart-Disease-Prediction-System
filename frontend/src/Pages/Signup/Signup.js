@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../Components/AuthContext/AuthContext";
+import { toast } from 'react-toastify';
 import "./Signup.css";
 
 const Signup = () => {
@@ -9,11 +10,32 @@ const Signup = () => {
   const { signup } = useAuth();
   const navigate = useNavigate();
 
+
+  const validateInput = () => {
+    if (!email) {
+      toast.error('Email is required');
+      return false;
+    }
+    if (!password || password.length < 3) {
+      toast.error('Password must be at least 3 characters');
+      return false;
+    }
+    return true;
+  };
+
+
   const handleSubmit = async (e) => {
+
     e.preventDefault();
-    console.log('Request body:', { email, password });
-    await signup(email, password);
-    navigate("/patient-form");
+    try {
+      if (!validateInput()) return;
+      const result = await signup(email, password);
+      if(result){
+        navigate("/patient-form");
+      }
+    } catch (error) {
+      console.log("error");
+    }
   };
 
   return (
