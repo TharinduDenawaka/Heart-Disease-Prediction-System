@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
+import ToastNotificationContainer from './Components/ToastContainer/ToastContainer';
 import NavBar from "./Components/NavBar/NavBar";
 import PaitientForm from "./Pages/PatientForm/PatientForm";
 import Home from "./Pages/Home/Home";
@@ -16,6 +17,7 @@ const App = () => {
     <AuthProvider>
       <Router>
         <NavBar />
+        <ToastNotificationContainer/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

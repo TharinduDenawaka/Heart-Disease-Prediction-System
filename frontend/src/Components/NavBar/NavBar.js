@@ -5,11 +5,11 @@ import { Logout } from '../../Pages/Logout/Logout';
 import "./NavBar.css";
 
 const Navbar = () => {
-  
   const { user } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleLogout = Logout();
   const location = useLocation();
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -29,7 +29,7 @@ const Navbar = () => {
           ☰
         </button>
         <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-          {!user && (
+          {!user ? (
             <>
               <li>
                 <Link to="/about" className={getNavLinkClass("/about")}>About</Link>
@@ -38,8 +38,7 @@ const Navbar = () => {
                 <Link to="/signup" className={getNavLinkClass("/signup")}>Signup</Link>
               </li>
             </>
-          )}
-          {user && (
+          ) : (
             <>
               <li>
                 <Link to="/about" className={getNavLinkClass("/about")}>About</Link>
