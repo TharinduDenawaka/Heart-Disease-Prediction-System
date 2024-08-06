@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const userRoutes = require('./Routes/userRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
 const { createInitialAdmin } = require('./Controllers/adminController');
+const { createInitialUser } = require('./Controllers/userController');
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ mongoose.connect(process.env.MONGO_URI_LOCAL, {
   .then(() => {
        console.log('MongoDB is Connected....')
        createInitialAdmin();
+       createInitialUser();
      })
      .catch((err) => console.error('Could not connect to MongoDB:', err));
 
