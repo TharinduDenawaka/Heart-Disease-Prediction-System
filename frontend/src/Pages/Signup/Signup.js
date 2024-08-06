@@ -7,6 +7,7 @@ import "./Signup.css";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("");
   const { signup } = useAuth();
   const navigate = useNavigate();
 
@@ -14,6 +15,10 @@ const Signup = () => {
   const validateInput = () => {
     if (!email) {
       toast.error('Email is required');
+      return false;
+    }
+    if (!username) {
+      toast.error('User name is required');
       return false;
     }
     if (!password || password.length < 3) {
@@ -25,11 +30,10 @@ const Signup = () => {
 
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
     try {
       if (!validateInput()) return;
-      const result = await signup(email, password);
+      const result = await signup(email, password, username);
       if(result){
         navigate("/patient-form");
       }
@@ -43,6 +47,16 @@ const Signup = () => {
       <div className="signup-container">
         <h2>Sign up</h2>
         <form onSubmit={handleSubmit}>
+        <div>
+            <input
+              type="text"
+              name="username"
+              placeholder="User name"
+              value={username}
+              onChange={(e) => setUserName(e.target.value)}
+              required
+            />
+          </div>
           <div>
             <input
               type="email"

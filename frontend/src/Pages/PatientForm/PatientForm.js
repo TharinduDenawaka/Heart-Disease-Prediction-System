@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useAuth } from "../../Components/AuthContext/AuthContext";
 import "./PatientForm.css";
 
 const InputForm = () => {
+
+  const { user } = useAuth();
+
   const [formData, setFormData] = useState({
     age: "",
     sex: "",
@@ -42,6 +46,7 @@ const InputForm = () => {
     <div className="p_container">
       <video src="/videos/heart_loading.mp4" autoPlay loop muted />
       <div className="container">
+        <h2 className="username">Hello { user.username }</h2>
         <h4>Heart Disease Prediction</h4>
         <form onSubmit={handleSubmit}>
           <div>

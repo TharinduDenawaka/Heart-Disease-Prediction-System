@@ -39,6 +39,7 @@
   
   /* Input field styling */
   .signup-container input[type="email"],
+  .signup-container input[type="text"],
   .signup-container input[type="password"] {
     padding: 10px;
     margin-bottom: 15px;

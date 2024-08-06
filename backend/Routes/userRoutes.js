@@ -7,7 +7,8 @@ const router = express.Router();
 // Validation middleware for signup
 const validateSignup = [
   check('email', 'Email is required').isEmail(),
-  check('password', 'Password must be at least 3 characters').isLength({ min: 3 })
+  check('password', 'Password must be at least 3 characters').isLength({ min: 3 }),
+  check('username', 'usename must be at least 3 characters').isLength({ min: 3 , max: 14})
 ];
 
 // Validation middleware for login

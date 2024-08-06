@@ -17,6 +17,7 @@ const createInitialUser = async () => {
 
       const user = new User({
         email: "tharindudasun1997@gmail.com",
+        username:"Tharindu dasun",
         password: password,
       });
       await user.save();
@@ -32,7 +33,7 @@ const createInitialUser = async () => {
 // Function to register a new user
 const signUpUser = async (req, res) => {
   console.log("Request body:", req.body);
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
 
   try {
     const userExists = await User.findOne({ email });
@@ -44,12 +45,14 @@ const signUpUser = async (req, res) => {
     const user = await User.create({
       email,
       password,
+      username,
     });
 
     if (user) {
       res.status(201).json({
         _id: user._id,
         email: user.email,
+        username: user.username,
         token: generateToken(user._id),
       });
     } else {
@@ -63,7 +66,7 @@ const signUpUser = async (req, res) => {
 
 // Function to authenticate a user
 const authUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
   console.log(email, password);
 
   try {
@@ -73,6 +76,7 @@ const authUser = async (req, res) => {
       res.status(200).json({
         _id: user._id,
         email: user.email,
+        username: user.username,
         token: generateToken(user._id),
       });
     } else {

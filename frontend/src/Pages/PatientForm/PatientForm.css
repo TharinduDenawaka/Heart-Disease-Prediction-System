@@ -6,6 +6,14 @@ video {
   z-index: -1;
 }
 
+.username{
+  background: linear-gradient(90deg, #b2706a, #a08b6b);
+  color: #fff;
+  padding: 10px;
+  border-radius: 25%;
+  margin-bottom: 20px;
+}
+
 .p_container {
   height: 100%;
   width: 100%;
