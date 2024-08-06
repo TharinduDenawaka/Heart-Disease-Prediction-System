@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../AuthContext/AuthContext";
-import { Logout } from '../../Pages/Logout/Logout';
+import { Logout } from "../../Pages/Logout/Logout";
 import "./NavBar.css";
 
 const Navbar = () => {
@@ -9,7 +9,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleLogout = Logout();
   const location = useLocation();
-
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,25 +31,45 @@ const Navbar = () => {
           {!user ? (
             <>
               <li>
-                <Link to="/about" className={getNavLinkClass("/about")}>About</Link>
+                <Link to="/about" className={getNavLinkClass("/about")}>
+                  About
+                </Link>
               </li>
               <li>
-                <Link to="/signup" className={getNavLinkClass("/signup")}>Signup</Link>
+                <Link to="/signup" className={getNavLinkClass("/signup")}>
+                  Signup
+                </Link>
               </li>
             </>
           ) : (
             <>
+              {/* <h2>Hii {user.username}</h2> */}
+
               <li>
-                <Link to="/about" className={getNavLinkClass("/about")}>About</Link>
+                <Link
+                  to="/patient-form"
+                  className={getNavLinkClass("/patient-form")}
+                >
+                  Patient Form
+                </Link>
               </li>
               <li>
-                <Link to="/patient-form" className={getNavLinkClass("/patient-form")}>Patient Form</Link>
+                <Link
+                  to="/change-password"
+                  className={getNavLinkClass("/change-password")}
+                >
+                  Change Password
+                </Link>
               </li>
               <li>
-                <Link to="/change-password" className={getNavLinkClass("/change-password")}>Change Password</Link>
+                <Link to="/about" className={getNavLinkClass("/about")}>
+                  About
+                </Link>
               </li>
               <li>
-                <button onClick={handleLogout} className="nav-link">Log Out</button>
+                <button onClick={handleLogout} className="nav-link">
+                  Log Out
+                </button>
               </li>
             </>
           )}
