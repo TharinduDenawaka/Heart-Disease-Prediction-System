@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../AuthContext/AuthContext";
 import { Logout } from "../../Pages/Logout/Logout";
+import { HomeTwoTone } from "@ant-design/icons";
 import "./NavBar.css";
 
 const Navbar = () => {
@@ -10,9 +11,7 @@ const Navbar = () => {
   const handleLogout = Logout();
   const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  
 
   const getNavLinkClass = (path) => {
     return location.pathname === path ? "nav-link active" : "nav-link";
@@ -22,11 +21,10 @@ const Navbar = () => {
     <nav>
       <div className="nav-container">
         <Link to="/" className="nav-brand">
-          Heart Disease Prediction System
+          {/* Heart  */}
+          <HomeTwoTone className="heart_icon" twoToneColor="#000000" />{" "}
         </Link>
-        <button className="nav-toggle" onClick={toggleMenu}>
-          ☰
-        </button>
+        
         <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
           {!user ? (
             <>
@@ -43,7 +41,6 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              {/* <h2>Hii {user.username}</h2> */}
 
               <li>
                 <Link
