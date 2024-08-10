@@ -1,189 +1,194 @@
 .login {
-  background: url("/public/images/heart_login.jpg") center center/cover no-repeat;
+  background: url("/public/images/heart_login.jpg") center center/cover
+    no-repeat;
   width: 100%;
   height: 100%;
   position: fixed;
 }
 .login-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    /* background: #fff; */
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
 /* Heading of the form */
 .login-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #000000;
-    font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 30px;
 }
 
 /* Form element styling */
 .login-container form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.login_from div {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Label styling */
 .login-container label {
-    margin-bottom: 5px;
-    color: #000000;
-    font-weight: bold;
-    font-size: 18px;
+  margin-bottom: 5px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* Input field styling */
 .login-container input[type="email"],
 .login-container input[type="password"] {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 /* Button styling */
 .login-container button[type="submit"] {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
 }
 
 .login-container button[type="submit"]:hover {
-    background-color: #ffb74d;
+  background-color: #ffb74d;
 }
 
 /* Link styling */
 .login-container a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #d9d5d5;
-    text-align: center;
-    display: block;
-    margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #d9d5d5;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
 }
 
 .login-container a:hover {
-    color: #ffb74d;
+  color: #ffb74d;
 }
 
 .signupLink a {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    text-align: center;
-    padding: 10px 20px;
-    background-color: #4fdd13; 
-    color: white;
-    text-decoration: none;
-    border-radius: 5px; 
-    transition: background-color 0.3s ease;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #4fdd13;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
-  
-  .signupLink a:hover {
-    background-color: #378714; 
-  }
-  
-  /* Media queries for tablet and mobile responsiveness */
+.signupLink a:hover {
+  background-color: #378714;
+}
+
+/* Media queries for tablet and mobile responsiveness */
 @media screen and (max-width: 960px) {
-    .login-container {
-        margin: 30px auto;
-        padding: 15px;
-    }
+  .login-container {
+    margin: 30px auto;
+    padding: 15px;
+  }
 
-    .login-container h2 {
-        font-size: 26px;
-    }
+  .login-container h2 {
+    font-size: 26px;
+  }
 
-    .login-container label {
-        font-size: 16px;
-    }
+  .login-container label {
+    font-size: 16px;
+  }
 
-    .login-container input[type="email"],
-    .login-container input[type="password"] {
-        font-size: 14px;
-    }
+  .login-container input[type="email"],
+  .login-container input[type="password"] {
+    font-size: 14px;
+  }
 
-    .login-container button[type="submit"] {
-        font-size: 14px;
-        padding: 8px;
-    }
+  .login-container button[type="submit"] {
+    font-size: 14px;
+    padding: 8px;
+  }
 
-    .signupLink a {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
+  .signupLink a {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .login-container {
-        margin: 20px auto;
-        padding: 10px;
-    }
+  .login-container {
+    margin: 20px auto;
+    padding: 10px;
+  }
 
-    .login-container h2 {
-        font-size: 22px;
-    }
+  .login-container h2 {
+    font-size: 22px;
+  }
 
-    .login-container label {
-        font-size: 14px;
-    }
+  .login-container label {
+    font-size: 14px;
+  }
 
-    .login-container input[type="email"],
-    .login-container input[type="password"] {
-        font-size: 14px;
-    }
+  .login-container input[type="email"],
+  .login-container input[type="password"] {
+    font-size: 14px;
+  }
 
-    .login-container button[type="submit"] {
-        font-size: 14px;
-        padding: 8px;
-    }
+  .login-container button[type="submit"] {
+    font-size: 14px;
+    padding: 8px;
+  }
 
-    .signupLink a {
-        font-size: 14px;
-        padding: 8px;
-        width: 100%;
-    }
+  /* .signupLink a {
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+  } */
 }
 
 @media screen and (max-width: 480px) {
-    .login-container {
-        margin: 10px auto;
-        padding: 8px;
-    }
+  .login-container {
+    margin-top: 70px;
+    max-width: 100%;
+    padding: 8px;
+  }
 
-    .login-container h2 {
-        font-size: 20px;
-    }
+  .login-container h2 {
+    font-size: 25px;
+  }
 
-    .login-container label {
-        font-size: 12px;
-    }
+  .login-container label {
+    font-size: 12px;
+  }
 
-    .login-container input[type="email"],
-    .login-container input[type="password"] {
-        font-size: 12px;
-    }
+  .login-container input[type="email"],
+  .login-container input[type="password"] {
+    font-size: 12px;
+  }
 
-    .login-container button[type="submit"] {
-        font-size: 12px;
-        padding: 6px;
-    }
+  .login-container button[type="submit"] {
+    font-size: 12px;
+    padding: 6px;
+  }
 
-    .signupLink a {
-        font-size: 12px;
-        padding: 6px;
-    }
+  .signupLink a {
+    font-size: 12px;
+    padding: 6px;
+  }
 }

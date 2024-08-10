@@ -1,6 +1,6 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
-const { signUpUser, authUser, changePassword, forgotPassword } = require('../Controllers/userController');
+const { signUpUser, authUser, changePassword, forgotPassword, verifyOTP, resendOTPVerificationCode, verifyForgotPasswordOTP } = require('../Controllers/userController');
 const { protect } = require('../Middleware/authMiddleware');
 const router = express.Router();
 
@@ -30,6 +30,10 @@ router.post('/signup', validateSignup, handleValidationErrors, signUpUser);
 router.post('/login', validateLogin, handleValidationErrors, authUser);
 router.put('/change-password', protect, changePassword);
 router.post('/forgot-password', forgotPassword);
+router.post('/verify-forgot-password-otp', verifyForgotPasswordOTP);
+router.post('/verifyOTP', verifyOTP);
+router.post('/resendOTPVerificationCode', resendOTPVerificationCode);
+
 
 module.exports = router;
 

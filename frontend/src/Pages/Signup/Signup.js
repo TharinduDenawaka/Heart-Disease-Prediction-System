@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../Components/AuthContext/AuthContext";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import "./Signup.css";
 
 const Signup = () => {
@@ -11,31 +11,32 @@ const Signup = () => {
   const { signup } = useAuth();
   const navigate = useNavigate();
 
-
   const validateInput = () => {
     if (!email) {
-      toast.error('Email is required');
+      toast.error("Email is required");
       return false;
     }
     if (!username) {
-      toast.error('User name is required');
+      toast.error("User name is required");
       return false;
     }
     if (!password || password.length < 3) {
-      toast.error('Password must be at least 3 characters');
+      toast.error("Password must be at least 3 characters");
       return false;
     }
     return true;
   };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       if (!validateInput()) return;
       const result = await signup(email, password, username);
-      if(result){
-        navigate("/patient-form");
+      console.log(result._id);
+
+      const userId = result._id;
+      if (result) {
+        navigate(`/verify-password/${userId}`);
       }
     } catch (error) {
       console.log("error");
@@ -46,8 +47,8 @@ const Signup = () => {
     <div className="signup">
       <div className="signup-container">
         <h2>Sign up</h2>
-        <form onSubmit={handleSubmit}>
-        <div>
+        <form className="signup_form" onSubmit={handleSubmit}>
+          <div>
             <input
               type="text"
               name="username"
@@ -79,6 +80,7 @@ const Signup = () => {
           </div>
           <button type="submit">Sign Up</button>
         </form>
+        <hr/>
         <Link to="/login">Already have an account? Log In</Link>
       </div>
     </div>

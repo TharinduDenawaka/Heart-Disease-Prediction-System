@@ -25,7 +25,7 @@ const Login = () => {
     <div className="login">
       <div className="login-container">
         <h2>Log in</h2>
-        <form onSubmit={handleSubmit}>
+        <form className="login_from" onSubmit={handleSubmit}>
           <div>
             <input
               type="email"

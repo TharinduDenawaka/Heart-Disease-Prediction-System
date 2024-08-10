@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGO_URI_LOCAL, {
   .then(() => {
        console.log('MongoDB is Connected....')
        createInitialAdmin();
-       createInitialUser();
+       createInitialUser()
      })
      .catch((err) => console.error('Could not connect to MongoDB:', err));
 
