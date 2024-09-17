@@ -20,8 +20,8 @@ const Signup = () => {
       toast.error("User name is required");
       return false;
     }
-    if (!password || password.length < 3) {
-      toast.error("Password must be at least 3 characters");
+    if (!password || password.length < 5) {
+      toast.error("Password must be at least 5 characters");
       return false;
     }
     return true;
