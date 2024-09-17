@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const userRoutes = require('./Routes/userRoutes');
-const userData = require('./Routes/userRoutes');
+const dataRoutes = require('./Routes/patientMedicalDataRoutes');
 const { createInitialUser } = require('./Controllers/userController');
 
 dotenv.config();
@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGO_URI_LOCAL, {
 
 
 app.use('/api/users', userRoutes);
-app.use('/api/data', userData);
+app.use('/api/data', dataRoutes);
 
 const PORT = process.env.PORT || 5000;
 
