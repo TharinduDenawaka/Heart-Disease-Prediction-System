@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
 
 # Load the model
-model = pickle.load(open('scaler.pkl', 'rb'))
+model = pickle.load(open('Heart.pkl', 'rb'))
 scaler = StandardScaler()
 
 
@@ -27,4 +27,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="127.0.0.1", port=8080, debug=True)
