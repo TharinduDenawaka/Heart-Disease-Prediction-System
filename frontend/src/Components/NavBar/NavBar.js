@@ -41,7 +41,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-
+               <h2 className="username">Helo, {user.username}</h2>
               <li>
                 <Link
                   to="/patient-form"

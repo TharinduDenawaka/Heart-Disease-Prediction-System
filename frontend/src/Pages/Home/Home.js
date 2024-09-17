@@ -13,9 +13,9 @@ const HomePage = () => {
     <div className="home-container">
       <video src="/videos/heart_2.mp4" autoPlay loop muted playsInline/>
       <div className="content">
-        <h1 className="HomeContent">Welcome to Heart Disease Prediction</h1>
+        <h1 className="HomeContent">Check Your Heart Helth</h1>   
         <p className="HomeContent">
-          Your health is important. Use our tool to assess your heart disease
+          Your health is important. Use this to assess your heart disease
           risk based on various health metrics.
         </p>
         <div className="home-btns">

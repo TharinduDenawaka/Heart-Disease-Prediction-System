@@ -38,7 +38,6 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    // toast.success('Logged out successfully');
   };
 
   const changePassword = async (currentPassword, newPassword) => {
@@ -67,7 +66,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await axios.post('http://localhost:5000/api/users/signup', { email, password, username });
       setUser(res.data);
-      // toast.success('Signup successful');
       return res.data
     } catch (error) {
       toast.error(error.response ? error.response.data.message : 'Signup failed');

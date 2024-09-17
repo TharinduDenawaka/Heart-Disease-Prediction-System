@@ -8,6 +8,10 @@ nav {
   z-index: 999;
 }
 
+.username{
+  color: #ffffff;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
