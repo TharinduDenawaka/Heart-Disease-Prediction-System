@@ -17,10 +17,10 @@ const AboutPage = () => {
         <li>Age and gender</li>
         <li>Blood pressure</li>
         <li>Cholesterol levels</li>
-        <li>Diabetes</li>
-        <li>Family history of heart disease</li>
-        <li>Physical activity levels</li>
-        <li>BMI (Body Mass Index)</li>
+        <li>Fasting blood sugar</li>
+        <li>ECG Result</li>
+        <li>Maximum heart rate achieved</li>
+        <li>ST depression</li>
       </ul>
       
       <h2>The Technology Behind It</h2>
