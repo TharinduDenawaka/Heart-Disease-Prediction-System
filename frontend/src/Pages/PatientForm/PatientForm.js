@@ -1,13 +1,8 @@
-
-
-
 import React, { useState } from "react";
 import axios from "axios";
-import { useAuth } from "../../Components/AuthContext/AuthContext";
 import "./PatientForm.css";
 
-const InputForm = () => {
-  const { user } = useAuth();
+const PatientForm = () => {
   const [formData, setFormData] = useState({
     age: "",
     sex: "",
@@ -26,6 +21,7 @@ const InputForm = () => {
 
   const [prediction, setPrediction] = useState(null);
   const [predictionRisk, setPredictionRisk] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -53,20 +49,12 @@ const InputForm = () => {
   };
 
   const handlePredictionRisk = (value) => {
-    const riskMapping = {
-      0: "Low Risk",
-      1: "Moderate Risk",
-      2: "High Risk",
-      3: "Very High Risk",
-      4: "Critical Risk",
-    };
-    return riskMapping[value] || "Unknown Risk";
+    return value === 0 ? "Low Risk" : "High Risk";
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Convert all numeric fields to numbers
     const numericFormData = Object.keys(formData).reduce((acc, key) => {
       if (formData[key] === "") {
         acc[key] = null;
@@ -83,9 +71,9 @@ const InputForm = () => {
       .then((response) => {
         const predictionValue = response.data.prediction;
         setPrediction(predictionValue);
-        setPredictionRisk(handlePredictionRisk(predictionValue));
-
-       
+        const risk = handlePredictionRisk(predictionValue);
+        setPredictionRisk(risk);
+        setShowModal(true);
         clearForm();
       })
       .catch((error) => {
@@ -93,12 +81,16 @@ const InputForm = () => {
       });
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="patientF">
       <div className="p-container">
         <h2 className="form-title">Heart Disease Prediction System</h2>
         <form className="patient-form" onSubmit={handleSubmit}>
-        <div className="form-group">
+          <div className="form-group">
             <label htmlFor="age">Age</label>
             <input
               type="number"
@@ -109,7 +101,6 @@ const InputForm = () => {
               required
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="sex">Sex</label>
             <select
@@ -124,7 +115,6 @@ const InputForm = () => {
               <option value="0">Female</option>
             </select>
           </div>
-
           <div className="form-group">
             <label htmlFor="cp">Chest Pain Type</label>
             <select
@@ -279,7 +269,6 @@ const InputForm = () => {
               <option value="2">Reversible Defect</option>
             </select>
           </div>
-
           <div className="form-group submit-group">
             <button type="submit" className="submit-button">
               Predict
@@ -287,9 +276,19 @@ const InputForm = () => {
           </div>
         </form>
 
-        {prediction !== null && (
-          <div className="prediction-result">
-            <h3>Prediction Result: {predictionRisk}</h3>
+        {showModal && (
+          <div
+            className={`modal ${
+              predictionRisk === "Low Risk" ? "green-theme" : "red-theme"
+            }`}
+            onClick={closeModal}
+          >
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <h3>Prediction Result: {predictionRisk}</h3>
+              <button className="close-button" onClick={closeModal}>
+                Close
+              </button>
+            </div>
           </div>
         )}
       </div>
@@ -297,4 +296,4 @@ const InputForm = () => {
   );
 };
 
-export default InputForm;
+export default PatientForm;
