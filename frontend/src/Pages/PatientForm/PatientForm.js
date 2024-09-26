@@ -88,7 +88,7 @@ const PatientForm = () => {
   return (
     <div className="patientF">
       <div className="p-container">
-        <h2 className="form-title">Heart Disease Prediction System</h2>
+        <h2 className="form-title">Is Your Heart Safe Or Not? </h2>
         <form className="patient-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="age">Age</label>
@@ -133,7 +133,7 @@ const PatientForm = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="trestbps">Resting Blood Pressure</label>
+            <label htmlFor="trestbps">Resting Blood Pressure </label>
             <input
               type="number"
               name="trestbps"
@@ -145,7 +145,7 @@ const PatientForm = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="chol">Serum Cholesterol</label>
+            <label htmlFor="chol">Serum Cholestoral In mg/dl</label>
             <input
               type="number"
               name="chol"
@@ -158,14 +158,17 @@ const PatientForm = () => {
 
           <div className="form-group">
             <label htmlFor="fbs">Fasting Blood Sugar</label>
-            <input
-              type="number"
-              name="fbs"
-              id="fbs"
-              value={formData.fbs}
-              onChange={handleChange}
-              required
-            />
+            <select
+               name="fbs"
+               id="fbs"
+               value={formData.fbs}
+               onChange={handleChange}
+               required
+            >
+              <option value="">Select</option>
+              <option value="0">False</option>
+              <option value="1">True</option>
+            </select>
           </div>
 
           <div className="form-group">
@@ -271,7 +274,7 @@ const PatientForm = () => {
           </div>
           <div className="form-group submit-group">
             <button type="submit" className="submit-button">
-              Predict
+            How Is My Heart?
             </button>
           </div>
         </form>
@@ -284,7 +287,7 @@ const PatientForm = () => {
             onClick={closeModal}
           >
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <h3>Prediction Result: {predictionRisk}</h3>
+              <h3>Your Heart is: {predictionRisk}</h3>
               <button className="close-button" onClick={closeModal}>
                 Close
               </button>
