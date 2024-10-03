@@ -11,8 +11,6 @@ const Navbar = () => {
   const handleLogout = Logout();
   const location = useLocation();
 
-  
-
   const getNavLinkClass = (path) => {
     return location.pathname === path ? "nav-link active" : "nav-link";
   };
@@ -21,10 +19,9 @@ const Navbar = () => {
     <nav>
       <div className="nav-container">
         <Link to="/" className="nav-brand">
-          {/* Heart  */}
           <HomeTwoTone className="heart_icon" twoToneColor="#000000" />{" "}
         </Link>
-        
+
         <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
           {!user ? (
             <>
@@ -41,7 +38,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-               <h2 className="username">Helo, {user.username}</h2>
+              <h2 className="username">Helo, {user.username}</h2>
               <li>
                 <Link
                   to="/patient-form"
@@ -59,8 +56,13 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className={getNavLinkClass("/about")}>
-                  About
+                <Link
+                  to={`/history/${user._id}/${user.username}`}
+                  className={getNavLinkClass(
+                    `/history/${user._id}/${user.username}`
+                  )}
+                >
+                  History
                 </Link>
               </li>
               <li>
