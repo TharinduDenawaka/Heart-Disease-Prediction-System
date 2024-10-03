@@ -1,16 +1,14 @@
-.patientF{
+.patientF {
   background: url("/public/images/heart_login.jpg") center center/cover
     no-repeat;
 }
-
 
 .p-container {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  /* background-color: rgba(244, 111, 244, 0.5); 50% transparent white background */
-  background-color:  transparent; 
+  background-color: transparent;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -107,12 +105,12 @@ select:focus {
 }
 
 .green-theme .modal-content {
-  background-color: #d4edda; /* Green background for Low Risk */
+  background-color: #d4edda;
   color: #155724;
 }
 
 .red-theme .modal-content {
-  background-color: #f8d7da; /* Red background for High Risk */
+  background-color: #f8d7da;
   color: #721c24;
 }
 

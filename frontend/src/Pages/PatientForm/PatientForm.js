@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./PatientForm.css";
+import { useAuth } from "../../Components/AuthContext/AuthContext";
 
 const PatientForm = () => {
+  const { user } = useAuth();
+
   const [formData, setFormData] = useState({
     age: "",
     sex: "",
@@ -71,14 +74,34 @@ const PatientForm = () => {
       .then((response) => {
         const predictionValue = response.data.prediction;
         setPrediction(predictionValue);
+
         const risk = handlePredictionRisk(predictionValue);
         setPredictionRisk(risk);
         setShowModal(true);
-        clearForm();
+
+        setTimeout(() => {
+          console.log({
+            ...numericFormData,
+            userId: user._id,
+            prediction: risk,
+          });
+
+          axios
+            .post("http://localhost:5000/api/data/sendData", {
+              ...numericFormData,
+              userId: user._id,
+              prediction: risk,
+            })
+            .catch((error) => {
+              console.error("There was an error!", error);
+            });
+        }, 0);
       })
       .catch((error) => {
         console.error("There was an error!", error);
       });
+
+    clearForm();
   };
 
   const closeModal = () => {
@@ -89,6 +112,7 @@ const PatientForm = () => {
     <div className="patientF">
       <div className="p-container">
         <h2 className="form-title">Is Your Heart Safe Or Not? </h2>
+        <h2 className="form-title">Check It From Hear </h2>
         <form className="patient-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="age">Age</label>
@@ -159,15 +183,15 @@ const PatientForm = () => {
           <div className="form-group">
             <label htmlFor="fbs">Fasting Blood Sugar</label>
             <select
-               name="fbs"
-               id="fbs"
-               value={formData.fbs}
-               onChange={handleChange}
-               required
+              name="fbs"
+              id="fbs"
+              value={formData.fbs}
+              onChange={handleChange}
+              required
             >
               <option value="">Select</option>
-              <option value="0">False</option>
-              <option value="1">True</option>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
             </select>
           </div>
 
@@ -274,7 +298,7 @@ const PatientForm = () => {
           </div>
           <div className="form-group submit-group">
             <button type="submit" className="submit-button">
-            How Is My Heart?
+              How Is My Heart?
             </button>
           </div>
         </form>
