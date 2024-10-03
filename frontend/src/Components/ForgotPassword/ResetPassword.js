@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import "./ResetPassword.css"; // Add a CSS file for styling
+import "./ResetPassword.css";
 
 const ResetPassword = () => {
   const { userId } = useParams();
@@ -36,7 +36,7 @@ const ResetPassword = () => {
       setMessage(res.data.message);
       if (res.data.message === "Password reset successfully.") {
         toast.success("Password reset successfully");
-        navigate("/login"); // Navigate to login page after successful password reset
+        navigate("/login");
       }
     } catch (error) {
       setMessage(error.response.data.message);

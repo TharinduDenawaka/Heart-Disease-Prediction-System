@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const UserOTPVerificationSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true,
   },
   otp: {
@@ -24,6 +24,9 @@ const UserOTPVerificationSchema = new mongoose.Schema({
 // Ensure the TTL index is created on the expiresAt field with a 15-minute expiration time
 UserOTPVerificationSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 900 });
 
-const UserOTPVerification = mongoose.model('UserOTPVerification', UserOTPVerificationSchema);
+const UserOTPVerification = mongoose.model(
+  "UserOTPVerification",
+  UserOTPVerificationSchema
+);
 
 module.exports = UserOTPVerification;

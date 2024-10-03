@@ -14,7 +14,6 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
-/* Heading of the form */
 .signup-container h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -22,13 +21,11 @@
   font-size: 30px;
 }
 
-/* Form element styling */
 .signup-container form {
   display: flex;
   flex-direction: column;
 }
 
-/* Label styling */
 .signup-container label {
   margin-bottom: 5px;
   color: #000000;
@@ -36,7 +33,6 @@
   font-size: 18px;
 }
 
-/* Input field styling */
 .signup-container input[type="email"],
 .signup-container input[type="text"],
 .signup-container input[type="password"] {
@@ -47,7 +43,6 @@
   font-size: 16px;
 }
 
-/* Button styling */
 .signup-container button[type="submit"] {
   padding: 10px;
   font-size: 16px;
@@ -63,7 +58,6 @@
   background-color: #ffb74d;
 }
 
-/* Link styling */
 .signup-container a {
   text-decoration: none;
   font-weight: bold;
@@ -82,7 +76,6 @@
   flex-direction: column;
 }
 
-/* Media queries for tablet and mobile responsiveness */
 @media screen and (max-width: 1024px) {
   .signup-container {
     max-width: 90%;

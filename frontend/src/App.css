@@ -14,20 +14,19 @@
 }
 
 .app-content {
-  margin-top: 70px; 
-} 
+  margin-top: 70px;
+}
 
 @media screen and (max-width: 768px) {
   .app-content {
-    margin-top: 100px; 
+    margin-top: 100px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .app-content {
-    margin-top: 70px; 
+    margin-top: 70px;
   }
-
 }
 
 .App-header {
@@ -53,8 +52,6 @@
     transform: rotate(360deg);
   }
 }
-
-
 
 .container {
   display: flex;
@@ -156,8 +153,6 @@
   font-size: 12px;
 }
 
-
-/* Mobile and tablet responsiveness */
 @media (max-width: 768px) {
   .App-header {
     font-size: calc(8px + 4vmin);

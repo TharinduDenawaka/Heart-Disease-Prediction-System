@@ -80,7 +80,7 @@ const Signup = () => {
           </div>
           <button type="submit">Sign Up</button>
         </form>
-        <hr/>
+        <hr />
         <Link to="/login">Already have an account? Log In</Link>
       </div>
     </div>

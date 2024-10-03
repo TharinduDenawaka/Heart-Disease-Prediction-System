@@ -1,135 +1,133 @@
 .home-container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
 }
 
 video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    pointer-events: none; 
-    user-select: none; 
-    touch-action: none; 
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  touch-action: none;
 }
 
-
 .content {
-    width: 75%;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.6); 
-    border-radius: 15px;
-    border: 2px solid #ff6f61; 
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 2s ease-in-out; 
+  width: 75%;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  border: 2px solid #ff6f61;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 2s ease-in-out;
 }
 
 .HomeContent {
-    color: white;
-    font-size: 2em; 
-    margin: 10px 0;
+  color: white;
+  font-size: 2em;
+  margin: 10px 0;
 }
 
 .home-container h1 {
-    font-size: 3em; 
-    margin: 10px 0;
-    background: linear-gradient(90deg, #ff6f61, #ffb74d); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 3em;
+  margin: 10px 0;
+  background: linear-gradient(90deg, #ff6f61, #ffb74d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .home-container p {
-    margin: 8px 0;
-    font-size: 1.5em;
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    color: #ffb74d; 
+  margin: 8px 0;
+  font-size: 1.5em;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #ffb74d;
 }
 
 .home-btns {
-    margin-top: 32px;
+  margin-top: 32px;
 }
 
 .start-button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background: linear-gradient(90deg, #ff6f61, #ffb74d); 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background: linear-gradient(90deg, #ff6f61, #ffb74d);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .start-button:hover {
-    background: linear-gradient(90deg, #ffb74d, #ff6f61); 
+  background: linear-gradient(90deg, #ffb74d, #ff6f61);
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-/* Tablet and mobile responsiveness */
 @media screen and (max-width: 960px) {
-    .home-container h1 {
-        font-size: 2.5em;
-    }
+  .home-container h1 {
+    font-size: 2.5em;
+  }
 
-    .home-container p {
-        font-size: 1.4em;
-    }
+  .home-container p {
+    font-size: 1.4em;
+  }
 
-    .start-button {
-        font-size: 1.1em;
-        padding: 8px 16px;
-    }
+  .start-button {
+    font-size: 1.1em;
+    padding: 8px 16px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .home-container h1 {
-        font-size: 2em;
-    }
+  .home-container h1 {
+    font-size: 2em;
+  }
 
-    .home-container p {
-        font-size: 1.2em;
-    }
+  .home-container p {
+    font-size: 1.2em;
+  }
 
-    .start-button {
-        width: 100%;
-        font-size: 1em;
-        padding: 12px; /* Increase padding for better touch targets */
-    }
+  .start-button {
+    width: 100%;
+    font-size: 1em;
+    padding: 12px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .home-container {
-        padding: 10px; 
-        height: 100%;
-    }
+  .home-container {
+    padding: 10px;
+    height: 100%;
+  }
 
-    .home-container h1 {
-        font-size: 1.8em;
-    }
+  .home-container h1 {
+    font-size: 1.8em;
+  }
 
-    .home-container p {
-        font-size: 1em;
-    }
+  .home-container p {
+    font-size: 1em;
+  }
 
-    .start-button {
-        font-size: 0.9em;
-        padding: 10px; /* Adjust padding for smaller buttons */
-    }
+  .start-button {
+    font-size: 0.9em;
+    padding: 10px;
+  }
 }

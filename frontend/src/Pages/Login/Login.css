@@ -21,7 +21,6 @@
   font-size: 30px;
 }
 
-/* Form element styling */
 .login-container form {
   display: flex;
   flex-direction: column;
@@ -32,7 +31,6 @@
   flex-direction: column;
 }
 
-/* Label styling */
 .login-container label {
   margin-bottom: 5px;
   color: #000000;
@@ -40,7 +38,6 @@
   font-size: 18px;
 }
 
-/* Input field styling */
 .login-container input[type="email"],
 .login-container input[type="password"] {
   padding: 10px;
@@ -50,7 +47,6 @@
   font-size: 16px;
 }
 
-/* Button styling */
 .login-container button[type="submit"] {
   padding: 10px;
   font-size: 16px;
@@ -66,7 +62,6 @@
   background-color: #ffb74d;
 }
 
-/* Link styling */
 .login-container a {
   text-decoration: none;
   font-weight: bold;
@@ -100,7 +95,6 @@
   background-color: #378714;
 }
 
-/* Media queries for tablet and mobile responsiveness */
 @media screen and (max-width: 960px) {
   .login-container {
     margin: 30px auto;
@@ -154,12 +148,6 @@
     font-size: 14px;
     padding: 8px;
   }
-
-  /* .signupLink a {
-    font-size: 14px;
-    padding: 8px;
-    width: 100%;
-  } */
 }
 
 @media screen and (max-width: 480px) {

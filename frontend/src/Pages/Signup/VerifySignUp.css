@@ -54,7 +54,6 @@
   outline: none;
 }
 
-/* Confirm Button */
 .confirm-button {
   background-color: #3b82f6;
   color: #fff;
@@ -79,14 +78,12 @@
   background-color: #2563eb;
 }
 
-/* Message Styling */
 .message {
   margin-top: 15px;
   font-size: 14px;
   color: #e63946;
 }
 
-/* Responsive Styling */
 @media (max-width: 768px) {
   .verify-signup-container {
     padding: 20px;

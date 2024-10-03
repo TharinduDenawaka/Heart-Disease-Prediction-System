@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import './VerifySignUp.css'
+import "./VerifySignUp.css";
 
 const VerifySignUp = () => {
   const { userId } = useParams();
@@ -12,10 +12,8 @@ const VerifySignUp = () => {
 
   const handleChange = (element, index) => {
     if (isNaN(element.value)) return false;
-    //   toast.error('OTP Must be a number');
     setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
 
-    // Focus next input
     if (element.nextSibling) {
       element.nextSibling.focus();
     }

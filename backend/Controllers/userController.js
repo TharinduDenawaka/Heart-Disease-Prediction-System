@@ -31,7 +31,6 @@ const sendOTPverificationEmail = async (user) => {
       html: `<div> <p>Enter <b>${otp}</b> In the app to verify your email address</p>
       <p>this code <b>expire in 15 minutes</b>. </p> </div>`,
     };
-    
 
     const salt = await bcrypt.genSalt(10);
     const hashedOTP = await bcrypt.hash(otp, salt);
@@ -42,7 +41,6 @@ const sendOTPverificationEmail = async (user) => {
       createdAt: Date.now(),
       expiresAt: Date.now() + 900000, // 3600000 milliseconds = 1 hour  , 900000 is 15 minute
     });
-
 
     //save OTP records
     await newOTPVerification.save();
@@ -108,7 +106,7 @@ const resendOTPVerificationCode = async (req, res) => {
       //delete existing records and resend
       await UserOTPVerification.deleteMany({ userId });
       await sendOTPverificationEmail({ _id: userId, email });
-      res.json({message: "OTP has been resent"})
+      res.json({ message: "OTP has been resent" });
     }
   } catch (error) {
     res.json({
