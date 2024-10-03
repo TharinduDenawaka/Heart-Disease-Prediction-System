@@ -1,45 +1,74 @@
-const Patient  = require("../Models/PatientMedicalData");
+const Patient = require("../Models/PatientMedicalData");
 
 const sendData = async (req, res) => {
-    try {
-        // Extracting data from the request body
-        const { age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal } = req.body;
+  try {
+    const {
+      userId,
+      age,
+      sex,
+      cp,
+      trestbps,
+      chol,
+      fbs,
+      restecg,
+      thalach,
+      exang,
+      oldpeak,
+      slope,
+      ca,
+      thal,
+      prediction,
+    } = req.body;
 
-        // Creating a new Patient record
-        const newPatient = new Patient({
-            age,
-            sex,
-            cp,
-            trestbps,
-            chol,
-            fbs,
-            restecg,
-            thalach,
-            exang,
-            oldpeak,
-            slope,
-            ca,
-            thal
-        });
+    const newPatient = new Patient({
+      userId,
+      age,
+      sex,
+      cp,
+      trestbps,
+      chol,
+      fbs,
+      restecg,
+      thalach,
+      exang,
+      oldpeak,
+      slope,
+      ca,
+      thal,
+      prediction,
+    });
 
-        // Saving the new patient data to the database
-        const savedPatient = await newPatient.save();
+    const savedPatient = await newPatient.save();
 
-        // Responding with the saved patient data
-        res.status(201).json({
-            message: "Patient data saved successfully",
-            data: savedPatient
-        });
+    res.status(201).json({
+      message: "Patient data saved successfully",
+      data: savedPatient,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error saving patient data",
+      error: error.message,
+    });
+  }
+};
 
-    } catch (error) {
-        // Handling errors
-        res.status(500).json({
-            message: "Error saving patient data",
-            error: error.message
-        });
+const showHistory = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const username = req.params.username;
+    console.log(username);
+    const patientHistory = await Patient.find({ userId });
+    if (!patientHistory) {
+      return res.status(404).json({ message: "Patient History not found" });
     }
+    res.json({ patientHistory, username });
+    console.log(patientHistory);
+  } catch (err) {
+    res.status(500).json({ message: "Failed to fetch patient history" });
+  }
 };
 
 module.exports = {
-    sendData
+  sendData,
+  showHistory,
 };

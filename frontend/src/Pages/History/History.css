@@ -1,0 +1,76 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("/public/images/heart_login.jpg") center center/cover;
+}
+
+.history {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+.history-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+/* Styling for the table */
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+}
+
+.patient-table th,
+.patient-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.patient-table th {
+  background-color: #007bff;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.patient-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.patient-table tbody tr:hover {
+  background-color: #e0eaff;
+  cursor: pointer;
+}
+
+.patient-table tbody td {
+  color: #555;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .patient-table th,
+  .patient-table td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .history-title {
+    font-size: 24px;
+  }
+}

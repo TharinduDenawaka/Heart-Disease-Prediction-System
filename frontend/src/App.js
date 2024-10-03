@@ -7,12 +7,13 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
+import History from "./Pages/History/History";
 import ChangePassword from "./Components/ChangePassword/ChangePassword";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./Components/ForgotPassword/ResetPassword";
 import VerifyPassword from "./Pages/Signup/VerifySignUp";
 import { AuthProvider } from "./Components/AuthContext/AuthContext";
-import "./App.css"
+import "./App.css";
 
 const App = () => {
   return (
@@ -29,8 +30,12 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/verify-password/:userId" element={<VerifyPassword />} />
+            <Route
+              path="/verify-password/:userId"
+              element={<VerifyPassword />}
+            />
             <Route path="/reset-password/:userId" element={<ResetPassword />} />
+            <Route path="/history/:userId/:username" element={<History />} />
           </Routes>
         </div>
       </Router>

@@ -1,7 +1,11 @@
-const express = require('express');
-const { sendData } = require('../Controllers/PatientMedicalDataController');
+const express = require("express");
+const {
+  sendData,
+  showHistory,
+} = require("../Controllers/PatientMedicalDataController");
 const router = express.Router();
 
-router.post('/sendData',sendData);
+router.post("/sendData", sendData);
+router.get("/history/:userId/:username", showHistory);
 
 module.exports = router;
